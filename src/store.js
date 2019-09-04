@@ -120,13 +120,25 @@ export default new Vuex.Store({
         },
         hideEmailError(){
             this.state.email.class['md-invalid'] = false;
+        },
+        initialiseStore(state) {
+            // Check if the ID exists
+            if(localStorage.getItem('store')) {
+                let store = JSON.parse(localStorage.getItem('store'));
+                localStorage.removeItem('store');
+                this.replaceState(
+                    Object.assign(state, store)
+                );
+            }
         }
         
     },
   
     actions: {
         save(){
-            console.log('save');
+            localStorage.setItem('store', JSON.stringify(this.state));
+            let store = JSON.parse(localStorage.getItem('store'));
+            console.log(store)
         }
 
     }
