@@ -15,8 +15,8 @@ npm run serve
 npm run build
 ```
 
-#Autor
+# Autor
 Aarón Elizondo Gamboa
 
-#LICENSE
+# LICENSE
 MIT
